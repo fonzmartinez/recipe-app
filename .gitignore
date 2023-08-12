@@ -156,3 +156,7 @@ cython_debug/
 
 # Database
 *.sqlite3
+
+# Django project
+.env
+pycache/
