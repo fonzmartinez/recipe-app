@@ -6,6 +6,6 @@ class Recipe(models.Model):
     recipe_name= models.CharField(max_length=120)
     ingredients= models.TextField()
     cooking_time= models.PositiveIntegerField()
-
+    
     def __str__(self):
         return str(self.recipe_name)
