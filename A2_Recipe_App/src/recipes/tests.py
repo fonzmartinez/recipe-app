@@ -18,3 +18,7 @@ class RecipeModelTest(TestCase):
           max_length = recipe._meta.get_field('recipe_name').max_length
           self.assertEqual(max_length, 120)
 
+    def test_get_absolute_url(self):
+        recipe = Recipe.objects.get(recipe_id=1)
+        self.assertEqual(recipe.get_absolute_url(), '/list/1')
+

@@ -1,6 +1,16 @@
-{% for object in object_list %}
+<h1 style="text-align: center;">Recipes' list</h1>
 
-{{object}}
-
-<br>
-{% endfor %}
+<table border="1" cellpadding="5" cellspacing="5" style="text-align: center; margin: auto;">
+  <tr style="font-size: 24px; font-weight: bold; font-style: Times New Roman;">
+    <td>Recipes' Titles</td>
+    <td>Recipes' Images</td>
+  </tr>
+  {% for object in object_list %}
+  <tr>
+    <td style="font-size: 24px; font-style: Times New Roman;">
+      <a href="{{object.get_absolute_url}}">{{object.recipe_name}}</a>
+    </td>
+    <td><img src="{{object.pic.url}}" width="250" height="200" /></td>
+  </tr>
+  {% endfor %}
+</table>
