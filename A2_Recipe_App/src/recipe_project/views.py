@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect          
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm    
 
 #define a function view called login_view that takes a request from user
@@ -21,7 +21,7 @@ def login_view(request):
            user=authenticate(username=username, password=password)
            if user is not None:                   
                login(request, user)                
-               return redirect('recipes:records')
+               return redirect('recipes:list')
        else:                                            
            error_message ='ooops.. something went wrong'  
 
@@ -32,3 +32,8 @@ def login_view(request):
    }
    #load the login page using "context" information
    return render(request, 'auth/login.html', context) 
+
+#define a function view called logout_view that takes a request from user
+def logout_view(request):                                  
+   logout(request)             
+   return redirect('login')    
