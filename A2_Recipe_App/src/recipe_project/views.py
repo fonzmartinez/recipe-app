@@ -36,4 +36,4 @@ def login_view(request):
 #define a function view called logout_view that takes a request from user
 def logout_view(request):                                  
    logout(request)             
-   return redirect('login')    
+   return render(request, 'auth/success.html')    
