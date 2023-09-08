@@ -1,14 +1,35 @@
-<h1>Login</h1>
+<head>
+  <style>
+    body {
+      background-color: #ffecb3;
+    }
 
-{% if error_message %}
-{{error_message}}
-{% endif %}
+    h1 {
+      text-align: center;
+      padding-top: 75px;
+    }
 
-<form action="" method="POST">
+    form {
+      text-align: center;
+      font-size: 24px;
+    }
+  </style>
+</head>
 
-  {% csrf_token %}
+<body>
+  <h1>Login</h1>
+  <br>
+  <br>
+  {% if error_message %}
+  {{error_message}}
+  {% endif %}
 
-  {{form}}
+  <form action="" method="POST">
 
-  <button type="submit">Login</button>
-</form>
+    {% csrf_token %}
+
+    {{form}}
+
+    <button type="submit">Login</button>
+  </form>
+</body>
